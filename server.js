@@ -1,8 +1,10 @@
 const express = require("express")
 const app = express()
 const {MongoClient} = require("mongodb")
-//const url = "mongodb+srv://projetodb:projetodb@cluster0.b6a3oyj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-const url = "mongodb+srv://gabrielazbluevictor:pudimdelazuli@cluster0.oy8urih.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const dotenv = require("dotenv")
+dotenv.config()
+const url = process.env.DATABASE_URL
+
 const ObjectId =require("mongodb").ObjectId
 const client = new MongoClient(url)
 const db = client.db("d-pessoais");
